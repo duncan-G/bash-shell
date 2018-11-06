@@ -1,7 +1,8 @@
 const bash = {
   pwd: require('./pwd.js'),
   ls: require('./ls.js'),
-  cat: require('./cat.js')
+  cat: require('./cat.js'),
+  curl: require('./curl.js')
 };
 
 const getCmd = cmdString => {
@@ -62,7 +63,6 @@ process.stdin.on('data', data => {
   const kwOptions = getkwOptions(cmdString);
   const args = getArgs(cmdString);
 
-  console.log(cmd, args, kwOptions);
   bash[cmd]
     ? bash[cmd](args, kwOptions, logMsg)
     : logMsg(`${cmd}: command not found`);
