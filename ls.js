@@ -7,7 +7,7 @@ function ls(args, options, logger) {
 
   fs.readdir(...args, options, (err, files) => {
     if (err) {
-      logger(err);
+      logger(err.message);
     } else {
       logger(files.join(','));
     }

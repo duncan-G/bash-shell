@@ -1,10 +1,10 @@
 const fs = require('fs');
 
 function cat(args, options, logger) {
-  if (options.length === 0) {
+  if (args.length === 0) {
     logger('Error: filename not passed');
   } else {
-    fs.readFile(...args, ...options, (err, data) => {
+    fs.readFile(...args, options, (err, data) => {
       if (err) {
         logger(err);
       } else {

@@ -1,6 +1,7 @@
 const bash = {
   pwd: require('./pwd.js'),
-  ls: require('./ls.js')
+  ls: require('./ls.js'),
+  cat: require('./cat.js')
 };
 
 const getCmd = cmdString => {
